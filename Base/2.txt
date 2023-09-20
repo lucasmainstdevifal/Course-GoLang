@@ -1,0 +1,126 @@
+===================================================================================================
+
+# => Declaração e atribuição em GoLang :
+
+Aprenderemos como fazemos declarações tanto de constantes quanto de variáveis em GoLang.
+
+===================================================================================================
+
+-> Temos várias sintaxes para declaração e atribuição de variáveis em GoLang :
+
+# var nome da variável tipo da variável 
+# Observação: Os tipos caso não sejam atribuídos possuem valores inferidos veremos abaixo: 
+...................................................................................................
+** Exemplo 01 => 
+
+var a = "Hello, World!" 
+println(a)
+Resultado = Hello, World!
+
+var b bool 
+println(b)
+Resultado = false
+
+var c int
+println(c)
+Resultado = 0
+
+var d string
+println(d)
+Resultado = "Ele retorna nada em branco"
+
+var e float64
+println(e)
+Resultado = +0.000000e+000
+...................................................................................................
+** Exemplo 02 => 
+package main
+
+var (
+    b bool
+    c int
+    d string 
+    e float64
+)
+
+func main()
+{
+    println(b)
+    println(c)
+    println(d)
+    println(e)
+}
+...................................................................................................
+** Exemplo 03 => Existe uma forma mais simplificada de declarar as variáveis que se chama [ ShortHand ]
+que significa: um método de escrita simbólica abreviada que aumenta a velocidade e a brevidade da 
+escrita em comparação com a escrita longa,
+
+package main
+
+func main () {
+    a := "X"
+}
+
+a := "X" -> Isso significa que criamos uma variável chamada a e fizemos a inferência para que a variável
+a seja do tipo que a sua atribuição ter, nesse caso a seria do tipo string. Pois a sua atribuição "X"
+é uma string.
+
+Explicação o [ : ] significa crie uma variável a e verifique o tipo da atribuição feita a ela.
+Explicação o [ = ] efetua a atribuição do valor a variável a.
+
+Por isto se fizermos assim:
+
+func main () {
+    a := "X"
+    a := "Y"
+}
+
+O Erro seria que a variável a já existe e não pode ser criada novamente. Então para corrigir fariamos:
+
+func main () {
+    a := "X"
+    a = "Y"
+}
+...................................................................................................
+Observação: Na forma apresentada em cima as variavéis estão sendo declaradas no escopo global
+e por isto podem ser acessadas dentro de quaisquer funções declaradas abaixo que utilizem 
+tais variáveis.
+
+Temos também o escopo local que é quando uma variável está declarada dentro de um escopo de função
+e portanto ela só é enxergada/e ou acessada dentro do escopo da função em questão. Em outra função
+ou fora do escopo dela , não é possível acessar aquela variável.
+
+Exemplo:
+
+package main
+
+func main()
+{
+    const a = "Hello World!"
+}
+
+func x()
+{
+    println(a)
+}
+
+Resultado: Erro não é possível acessar a variável a pois ela está em um escopo local definido 
+e diferente do escopo onde ela está sendo acionada para a exibição no comando println.
+
+Porém também precisamos nos atentar as diferenças entre const e var.
+No uso de const os valores atribuidos são constantes ou seja não podem ser alterados.
+Já no uso de var os valores atribuidos podem ser reatribuídos e alterados.
+
+===================================================================================================
+
+Uma característica do GoLang é que ele é fortemente tipado. Isso significa que por exemplo.
+Uma variável a declarada como inteira não pode receber uma string por exemplo.
+
+var int c = 10
+
+c = "Hello World" -> Isso resultará em um erro e não poderá sequer ser compilado.
+===================================================================================================
+IMPORTANTE: Variáveis de escopo local ( ou seja que estão acopladas a uma função por exemplo ), 
+caso sejam declaradas e não forem utilizadas o compilador impedirá a compilação. Por padrão o GoLang
+descreve que qualquer variável declarada dentro de um escopo local precisa ser utilizada. 
+===================================================================================================

@@ -1,0 +1,40 @@
+===================================================================================================
+
+# => Criação de Tipos:
+
+Rotineiramente em linguagens de programação , temos os tipos primitivos:
+
+integer, string, float, double, bool ... etc.
+
+> Porém no arcabolso do GoLang nos temos a opção de criar um novo tipo com o comando/estrutura: 
+[ type nameType ]
+
+* Vamos imaginar que eu to querendo deixar o meu programa mais expressivo.
+* Ou eu to querendo que o meu programa tenha um tipo específico pra eu conseguir trabalhar.
+
+...................................................................................................
+=> Por exemplo:
+...................................................................................................
+package main
+
+const a = "Hello, World!"
+type ID int
+
+var (
+    b bool    = true
+	c int     = 18
+	d string  = "Lucas Dev"
+	e float64 = 1.2
+    f ID      = 1
+)
+
+func main () {
+    println(f)
+}
+...................................................................................................
+Resultado: 1
+...................................................................................................
+
+Benefício: O benefício de se usar o type é que podemos criar um tipo com alguma biblioteca externa
+ou alguma coisa assim dessa forma.
+=================================================================================================== 

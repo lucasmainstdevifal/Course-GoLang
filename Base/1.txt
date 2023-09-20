@@ -1,0 +1,115 @@
+===================================================================================================
+
+# Comandos Iniciais:
+
+# Instalamos a GoLang no link: https://go.dev/, clicamos em Donwload e executamos o instalador
+
+go version -> Retorna a versão do go instalada na máquina
+
+go env     -> Exibe as variáveis de ambiente que o go usa para ter o seu comportamento padrão
+# Verificamos a variável GO_PATH = C:\Users\DTI\go
+# Vamos em C:\Users\DTI\go no Explorer do Windows
+
+# ***  Nesse diretorio temos os diretórios :=> pkg, bin , src. ***
+
+# bin      -> Diretório onde ficam todos os binários que podem ser utilizados
+
+===================================================================================================
+
+# Arquivo Inicial:
+
+1) Criar arquivo main.go
+
+2) Colocar a estrutura: 
+package main
+
+func main() {
+	println("Hello")
+}
+
+3) E executamos o comando: go run main.go => Saída: Hello
+
+===================================================================================================
+
+# Extensões Go 
+
+1) Clicamos na área de extensão do VsCode digitamos Go e instalamos a extensão
+* Porém somente instalar não ativa a extensão precisamos fazer o passo 2.
+
+2) Pressionamos: Control + Shift + P e digitamos: >Go: Install/Update Tools [ ENTER ]
+* Vai aparecer várias opções com 7 Checkboxes marcamos todas e damos Ok
+* Ele vai instalar várias dependências para que a gente consiga trabalhar com o GO no VsCode
+* Finalizará quando aparecer a linha de texto: All tools successfully installed. You are ready to Go. :)
+
+3) Instalamos também a extensão o Go Docs.
+
+===================================================================================================
+
+# Entendo a primeira linha
+
+Na aula o instrutor vai explicar sobre uma primeira linha de comando :
+
+* Todo arquivo .go terá por padrão um package.
+* Como que vai ser o nome desse package? Sempre o nome do diretório que você está.
+* Exemplo: Nome do diretório (controllers), nome do package será: package controllers
+* Exceção: Com exceção do package main, por que o package main é o principal e o ponto de
+* entrada de toda aplicação .go, isso significa que é um package que é esperado para que
+* o código funcione , e também é esperado uma função chamada func main(){ } para o start
+* da aplicação.
+
+package main
+
+func main() {
+	println("Hello, World!")
+}
+
+# Nesta aula o intuito não é nem tanto explicar a function func main () { }
+# mas sim explicar e entender a organização dos pacotes.
+
+# Por exemplo se criassemos um diretório com nome: "soma".
+# Dentro do diretório "soma",poderíamos criar qualquer arquivo com qualquer nome com extensão ".go"
+# Por exemplo: cantigas.go -> O diretório : ./soma/cantigas.go
+
+# No arquivo [ cantigas.go ] a estrutura de package ficaria da seguinte forma :
+
+# package soma
+
+-> Situação: Quando temos a situação de ter vários arquivos dentro de um mesmo diretório,
+esse arquivos precisam estar dentro do mesmo pacote [ package ] 
+
+# Sempre os arquivos que estiverem dentro de um mesmo diretório tem que ter o mesmo nome 
+# de pacote , package.
+
+===================================================================================================
+# Para entendermos o contexto dos pacotes (packages): Criaremos uma situação =>
+
+* Dentro de um diretório com nome : 1
+* Criaremos um arquivo chamado a.go , dentro do diretório 1: a.go
+-> Com a estrutura: 
+
+package main
+
+const a = "Hello, World!"
+---------------------------------------------------------------------------------------------------
+* Criaremos um arquivo chamado main.go , dentro do diretório 1: main.go
+-> Com a estrutura: 
+
+package main
+
+func main() {
+	println(a)
+}
+
+Executando o comando: go run main.go
+O retorno será      : Hello, World!
+
+==> Explicação : O resultado saiu com o valor armazanado na constante a, pois o main.go e o a.go
+estão dentro do mesmo pacote. Então eles conseguem enxergar todas as variáveis e todas as funções.
+No frisar dos ovos, é como se tudo que tivesse no a.go , também estivesse no main.go.
+
+
+Resumo: Tudo começa com package, o package é o nome do diretório, exceto pelo package main que 
+é o started da aplicação e o principal. E tudo que estiver dentro de um mesmo package pode ser
+enxergado e acessado.
+
+===================================================================================================

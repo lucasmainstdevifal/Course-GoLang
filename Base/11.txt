@@ -1,0 +1,39 @@
+===================================================================================================
+
+# => Iniciando com Structs
+
+Hoje em dia é comum trabalhar com orientação a objetos.
+Porém o Go não é uma linguagem orientada a objetos.
+
+O que mais se assemelha é a Structs.
+
+Imaginemos que uma Struct é um tipo de uma classe.
+Porém uma struct não é uma classe.
+
+package main
+
+import "fmt"
+
+// Isso aqui é uma Struct
+type Cliente struct {
+	Nome  string
+	Idade int
+	Ativo bool
+}
+
+func main() {
+	Lucas := Cliente{
+		Nome:  "Lucas",
+		Idade: 27,
+		Ativo: true,
+	}
+
+	Lucas.Ativo = false
+
+	fmt.Printf("Nome: %s, Idade %d, Ativo %t", Lucas.Nome, Lucas.Idade, Lucas.Ativo)
+	fmt.Println(Lucas.Ativo)
+}
+
+...................................................................................................
+Resultado: Nome: Lucas, Idade 27, Ativo falsefalse
+===================================================================================================

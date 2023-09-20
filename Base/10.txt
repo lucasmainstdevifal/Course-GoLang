@@ -1,0 +1,32 @@
+===================================================================================================
+
+# => Closures
+
+Funções Anônimas, que podem ser executadas dentro de outras sem nomes definidos:
+
+package main
+
+import "fmt"
+
+func main() {
+    // Aqui é uma Closure
+	total := func() int {
+		return sumtwo(1, 2, 3, 4, 5, 6, 7) * 2
+	}()
+
+	fmt.Println(total)
+}
+
+func sumtwo(numeros ...int) int {
+	total := 0
+	for _, numero := range numeros {
+		total += numero
+	}
+
+	return total
+}
+
+
+...................................................................................................
+Resultado: 56
+===================================================================================================
