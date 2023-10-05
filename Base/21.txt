@@ -1,0 +1,28 @@
+===================================================================================================
+
+# => Pacotes e Módulos - Parte 1
+A necessidade de acessar funções em pastas diferentes e em arquivos diferentes nos faz a necessidade
+de usar módulos.
+
+No arcabolso da Golang temos o Go Mod.
+A primeira coisa que é recomendada a se fazer é criar o go mod com o comando.
+...................................................................................................
+
+** Comandos:
+
+go mod init github.com/lucasmainstdevifal/Course-GoLang [ ENTER ]
+Resultado:
+go: creating new go.mod: module github.com/lucasmainstdevifal/Course-GoLang
+go: to add module requirements and sums:
+        go mod tidy
+
+O comando go mod tidy verifica as dependências que estamos listando no go.mod
+como se fosse o package.json do Node.js e caso tenha alguma externa ele baixa
+e instala no projeto.
+...................................................................................................
+Resultado: Irá criar um arquivo na raiz do projeto com nome
+go.mod, E o conteúdo:
+module github.com/lucasmainstdevifal/Course-GoLang
+
+go 1.19
+===================================================================================================
