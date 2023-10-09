@@ -25,4 +25,7 @@ go.mod, E o conteúdo:
 module github.com/lucasmainstdevifal/Course-GoLang
 
 go 1.19
+
+
+go get github.com/google/uuid -> Para instalar uma nova biblioteca e adicionala ao projeto.
 ===================================================================================================
